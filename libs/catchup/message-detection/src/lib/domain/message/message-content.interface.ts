@@ -1,4 +1,4 @@
-import { IMention } from "../mention/mention.interface";
+import { IMention } from '../mention/mention.interface';
 
 export interface IMessageContent {
   value: string;

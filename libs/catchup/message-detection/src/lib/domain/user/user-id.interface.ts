@@ -1,4 +1,3 @@
 export interface IUserId {
-    value: string;
-  }
-  
+  value: string;
+}
