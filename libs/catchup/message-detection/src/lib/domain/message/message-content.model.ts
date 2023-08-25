@@ -1,6 +1,6 @@
-import { IGroup } from "./group.interface";
+import { IGroup } from "../group/group.interface";
 import { IMessageContent } from "./message-content.interface";
-import { IUserId } from "./user-id.interface";
+import { IUserId } from "../user/user-id.interface";
 
 
 export class MessageContent implements IMessageContent {
@@ -9,7 +9,7 @@ export class MessageContent implements IMessageContent {
   containsMentionOf(userId: IUserId): boolean {
     throw new Error("Method not implemented.");
   }
-  
+
   getAllMentions(): (IUserId | IGroup)[] {
     throw new Error("Method not implemented.");
   }

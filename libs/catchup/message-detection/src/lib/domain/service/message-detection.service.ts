@@ -1,6 +1,7 @@
-import { GroupRepository } from "./group.repository";
-import { IMessage } from "./message.interface";
-import { IUserId } from "./user-id.interface";
+
+import { GroupRepository } from "../group/group.repository";
+import { IMessage } from "../message/message.interface";
+import { IUserId } from "../user/user-id.interface";
 
 export class MessageDetectionService {
   constructor(private groupRepository: GroupRepository) {}

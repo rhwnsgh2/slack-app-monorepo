@@ -1,5 +1,5 @@
-import { IGroup } from "./group.interface";
-import { IUserId } from "./user-id.interface";
+import { IGroup } from "../group/group.interface";
+import { IUserId } from "../user/user-id.interface";
 
 export interface IMessageContent {
   value: string;
