@@ -6,7 +6,7 @@
   "private": true,
   "dependencies": {
     "@nrwl/node": "^16.7.4",
-    "axios": "^1.0.0",
+    "axios": "^1.5.0",
     "tslib": "^2.3.0"
   },
   "devDependencies": {
