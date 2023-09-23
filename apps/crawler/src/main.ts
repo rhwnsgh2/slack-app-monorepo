@@ -1,14 +1,5 @@
 import axios from 'axios';
-
-const getChannelList = async () => {
-  const res = await axios.get('https://slack.com/api/conversations.list', {
-    headers: {
-      Authorization: `Bearer ${process.env.SLACK_USER_TOKEN}`,
-    },
-  });
-
-  return res.data.channels;
-};
+import getChannelList from './api/getChannelList';
 
 const getChannelHistory = async (channelId: string) => {
   const res = await axios.get('https://slack.com/api/conversations.history', {
@@ -28,7 +19,7 @@ const main = async () => {
 
   const channelHistory = await getChannelHistory(channels[0].id);
 
-  console.log(channelHistory[0]);
+  console.log(channelHistory);
 };
 
 main();
