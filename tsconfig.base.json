@@ -23,6 +23,9 @@
       ],
       "@slack-app/message-event-receiver": [
         "libs/message-event-receiver/src/index.ts"
+      ],
+      "@slack-app/reaction-analytics": [
+        "libs/reaction-analytics/src/index.ts"
       ]
     }
   },
