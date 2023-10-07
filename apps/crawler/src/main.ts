@@ -17,19 +17,21 @@ const getChannelHistory = async (
     },
   });
 
-  const responseThreads = res.data.messages.map((message) => {
-    return {
-      id: message.ts,
-      channel: channelId,
-      text: message.text,
-      user: message.user,
-    };
-  });
+  const responseThreads: Thread[] = res.data.messages
+    .map((message) => {
+      return {
+        id: message.ts,
+        channel: channelId,
+        text: message.text,
+        user: message.user,
+      };
+    })
+    .filter((message) => message.user !== undefined);
 
   if (res.data.has_more) {
     const nextMessages = await getChannelHistory(
       channelId,
-      [...threads, ...res.data.messages],
+      [...threads, ...responseThreads],
       res.data.response_metadata.next_cursor,
     );
 
@@ -44,7 +46,7 @@ const main = async () => {
 
   const channelHistory = await getChannelHistory(channels[3].id);
 
-  console.log(channelHistory[0]);
+  console.log(channelHistory);
 };
 
 main();
