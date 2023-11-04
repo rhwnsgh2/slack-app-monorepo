@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { Channel } from '../types/channel';
+import { Channel } from '../../../types/channel';
 
 const getChannelList = async (): Promise<Channel[]> => {
   const res = (await axios.get('https://slack.com/api/conversations.list', {
