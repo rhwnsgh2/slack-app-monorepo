@@ -1,4 +1,7 @@
 import { App } from '@slack/bolt';
+import { config } from 'dotenv';
+
+config();
 
 const app = new App({
   token: process.env.SLACK_BOT_TOKEN,
@@ -22,7 +25,7 @@ async function userMentionMiddleware({ message, next }) {
 app.message(
   requestWordMiddleware,
   userMentionMiddleware,
-  async ({ message, client, say }) => {
+  async ({ message, client }) => {
     // say() sends a message to the channel where the event was triggered
     console.log(message);
 

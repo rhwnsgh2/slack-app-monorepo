@@ -10,7 +10,7 @@
       "defaultConfiguration": "production",
       "options": {
         "platform": "node",
-        "outputPath": "dist/apps/catchup",
+        "outputPath": "apps/catchup/dist/apps/catchup",
         "format": ["cjs"],
         "bundle": false,
         "main": "apps/catchup/src/main.ts",
@@ -71,6 +71,14 @@
           "codeCoverage": true
         }
       }
+    },
+    "deploy": {
+      "dependsOn": ["build"],
+      "command": "fly deploy apps/catchup"
+    },
+    "docker-build": {
+      "dependsOn": ["build"],
+      "command": "docker build -f apps/catchup/Dockerfile . -t catchup"
     }
   },
   "tags": []
