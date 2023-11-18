@@ -31,7 +31,7 @@ app.message(
 
     client.chat.postMessage({
       channel: 'U05QZ2RA0NM',
-      text: 'Hello world',
+      text: '하이 배포됐지롱',
     });
   },
 );
