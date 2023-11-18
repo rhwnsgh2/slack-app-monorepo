@@ -74,7 +74,7 @@
     },
     "deploy": {
       "dependsOn": ["build"],
-      "command": "fly deploy apps/catchup"
+      "command": "fly deploy apps/catchup && rm -rf apps/catchup/dist"
     },
     "docker-build": {
       "dependsOn": ["build"],
